@@ -14,7 +14,8 @@ public class ConvertTest  {
     }
 
     @Test
-    void should_convert_name_to_name_list() {
+    void should_convert_one_name_to_name_list() {
       assertEquals("huang lizhen",convert.converNameToList("huang lizhen").get(0));
     }
+
 }
