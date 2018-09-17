@@ -46,6 +46,10 @@ public class ConvertTest {
     }
 
     @Test
-    void should_() {
+    void should_sort_by_passport_name() {
+        List<String> nameList = convert.convertNameToList(names);
+        List<Person> persons = convert.convertNamesToPerson(nameList);
+        List<Person> sortedPersons = convert.sortPersons(persons);
+        assertIterableEquals(Arrays.asList(new Person("HUANG,LIZHEN"), new Person("LAN,YIXING"), new Person("SUN,MING"), new Person("YANG,KAIGUANG")), sortedPersons);
     }
 }
