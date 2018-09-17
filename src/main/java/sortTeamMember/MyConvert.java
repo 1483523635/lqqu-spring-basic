@@ -14,4 +14,9 @@ public class MyConvert {
     public List<Person> convertNamesToPerson(List<String> nameList) {
         return nameList.stream().map(name -> new Person(name)).collect(Collectors.toList());
     }
+
+    public List<Person> sortPersons(List<Person> persons) {
+        persons.sort(Person::compareTo);
+        return persons;
+    }
 }

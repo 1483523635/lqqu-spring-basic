@@ -39,4 +39,10 @@ public class ConvertTest {
                 new Person("SUN,MING")),
                 convert.convertNamesToPerson(nameList));
     }
+
+    @Test
+    void should_sorted_person_by_passport_format() {
+        List<Person> persons = Arrays.asList(new Person("b"), new Person("a"), new Person("c"));
+        assertIterableEquals(Arrays.asList(new Person("A"), new Person("B"), new Person("C")), convert.sortPersons(persons));
+    }
 }
