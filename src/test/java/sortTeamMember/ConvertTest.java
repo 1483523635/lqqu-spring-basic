@@ -32,8 +32,11 @@ public class ConvertTest {
     @Test
     void should_convert_one_name_to_person() {
         List<String> nameList = convert.convertNameToList(names);
-        assertEquals(new Person("huang lizhen"), convert.convertNamesToPerson(nameList).get(0));
+        assertIterableEquals(Arrays.asList(
+                new Person("HUANG,LIZHEN"),
+                new Person("LAN,YIXING"),
+                new Person("YANG,KAIGUANG"),
+                new Person("SUN,MING")),
+                convert.convertNamesToPerson(nameList));
     }
-
-
 }
