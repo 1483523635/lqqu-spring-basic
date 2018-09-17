@@ -31,12 +31,11 @@ public class ConvertTest {
 
     @Test
     void should_convert_one_name_to_person() {
-        List<String> nameList = convert.convertNameToList(names);
+        List<String> nameList = Arrays.asList("a ", "b ", "c ");
         assertIterableEquals(Arrays.asList(
-                new Person("HUANG,LIZHEN"),
-                new Person("LAN,YIXING"),
-                new Person("YANG,KAIGUANG"),
-                new Person("SUN,MING")),
+                new Person("A,"),
+                new Person("B,"),
+                new Person("C,")),
                 convert.convertNamesToPerson(nameList));
     }
 
@@ -44,5 +43,9 @@ public class ConvertTest {
     void should_sorted_person_by_passport_format() {
         List<Person> persons = Arrays.asList(new Person("b"), new Person("a"), new Person("c"));
         assertIterableEquals(Arrays.asList(new Person("A"), new Person("B"), new Person("C")), convert.sortPersons(persons));
+    }
+
+    @Test
+    void should_() {
     }
 }
