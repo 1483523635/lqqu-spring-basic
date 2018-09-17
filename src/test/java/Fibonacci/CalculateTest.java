@@ -7,17 +7,23 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculateTest {
     @Test
-    void should_throw_exception_when_number_less_0() {
+    void should_throw_exception_when_number_less_1() {
         Calculate calculate = new Calculate();
         assertThrows(IllegalArgumentException.class, () -> {
-            calculate.getResult(-1);
+            calculate.getResult(0);
         });
     }
 
     @Test
-    void should_return_1_when_given_0() {
+    void should_return_1_when_given_1() {
         Calculate calculate = new Calculate();
-        assertEquals(1, calculate.getResult(0));
+        assertEquals(1, calculate.getResult(1));
+    }
+
+    @Test
+    void should_return_3_when_given_4() {
+        Calculate calculate = new Calculate();
+        assertEquals(3, calculate.getResult(4));
     }
 
     @Test
