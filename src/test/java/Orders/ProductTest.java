@@ -13,8 +13,7 @@ public class ProductTest {
     void should_get_product_list_when_given_a_product_id_list() {
         List<Integer> productIds = Arrays.asList(1, 2, 3);
         Product product = new Product();
-        List<ProductItem> products = product.getProducts(productIds);
-        assertThat(products).isEqualTo(Arrays.asList(
+        assertThat(product.getProducts(productIds)).isEqualTo(Arrays.asList(
                 new ProductItem(1, "手机", 1000D),
                 new ProductItem(2, "手机", 1002D),
                 new ProductItem(3, "钢化膜", 10)));
@@ -22,10 +21,9 @@ public class ProductTest {
     }
 
     @Test
-    void should_return_empty_when_not_contains_product() {
+    void should_return_empty_when_not_contains_product_id_list() {
         List<Integer> productIds = Arrays.asList(111,222,333);
         Product product = new Product();
-        List<ProductItem> products = product.getProducts(productIds);
-        assertThat(products).isEmpty();
+        assertThat(product.getProducts(productIds)).isEmpty();
     }
 }

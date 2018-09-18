@@ -20,37 +20,33 @@ public class shoppingCarTest {
     }
 
     @Test
-    void should_get_shopping_car_items_when_give_prodcuct_id_list_and_user_id_1() {
-        List<Integer> products = Arrays.asList(1, 2, 3);
+    void should_get_shopping_car_items_when_give_product_id_list_and_user_id() {
+        List<Integer> productIds = Arrays.asList(1, 2, 3);
         int userId = 1;
-        List<ShoppingCarItem> items = shoppingCar.getItems(userId, products);
-        assertThat(items).isEqualTo(Arrays.asList(
+        assertThat(shoppingCar.getItems(userId, productIds)).isEqualTo(Arrays.asList(
                 new ShoppingCarItem(1, 1, 1),
                 new ShoppingCarItem(1, 2, 2),
                 new ShoppingCarItem(1, 3, 3)));
     }
 
     @Test
-    void should_return_empty_when_product_not_exists() {
-        List<Integer> products = Arrays.asList(123, 123, 345);
+    void should_return_empty_when_product_id_list_not_exists() {
+        List<Integer> productIds = Arrays.asList(123, 123, 345);
         int userId = 1;
-        List<ShoppingCarItem> items = shoppingCar.getItems(userId, products);
-        assertThat(items).isEmpty();
+        assertThat(shoppingCar.getItems(userId, productIds)).isEmpty();
     }
 
     @Test
-    void should_return_empty_when_user_id_is_invalid() {
-        List<Integer> products = Arrays.asList(1, 2, 3);
+    void should_return_empty_when_user_id_not_exists() {
+        List<Integer> productIds = Arrays.asList(1, 2, 3);
         int userId = 11234;
-        List<ShoppingCarItem> items = shoppingCar.getItems(userId, products);
-        assertThat(items).isEmpty();
+        assertThat(shoppingCar.getItems(userId, productIds)).isEmpty();
     }
 
     @Test
-    void should_return_empty_when_user_id_and_product_both_not_exists() {
-        List<Integer> products = Arrays.asList(11234, 2123, 3123);
+    void should_return_empty_when_user_id_and_product_id_list_both_not_exists() {
+        List<Integer> productIds = Arrays.asList(11234, 2123, 3123);
         int userId = 11234;
-        List<ShoppingCarItem> items = shoppingCar.getItems(userId, products);
-        assertThat(items).isEmpty();
+        assertThat(shoppingCar.getItems(userId, productIds)).isEmpty();
     }
 }
