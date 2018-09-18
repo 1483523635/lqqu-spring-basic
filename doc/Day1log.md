@@ -10,6 +10,6 @@ ans: gradle由 `plugin`,`repositories`,`dependency`,`tasks`组成。
 测试可以保证你功能时时刻刻都在正常的运行着。如果重构改变了系统的原有功能，单元测试可以帮助我们快速发现问题。
 TDD可以保证让你以最快的速度实现你的需求（测试变绿），避免了前期的无用设计。
 4. 分组排序
-![Tasking图](../images/IMG_0745.jpg)
+![Tasking图](../imagexs/IMG_0745.jpg)
 [代码实现](../src/test/java/sortTeamMember/PersonSortTest.java)
   
