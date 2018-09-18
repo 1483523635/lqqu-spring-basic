@@ -1,10 +1,15 @@
 1. 一个基本的Gradle配置由那几部分组成，它们各代表什么含义？
 
 ans: gradle由 `plugin`,`repositories`,`dependency`,`tasks`组成。
+
     * plugin的作用：顾名思义，这个就是插件的意思，可以添加你所需要的插件。插件[查找地址](https://plugins.gradle.org/)
+    
     * repositories 就是仓库，不同的依赖可能在不同的仓库，所以需要配置这些东西。默认是maven。
+    
     * dependency 就是依赖，这个用的最频繁，当前项目依赖的各种类库，都可以从这里进行配置。
+    
     * tasks 任务，gradle 可以自定义任务，并且可以通过 `gradle task --all`找到所有的命令，还可以通过`gradle [taskName]`执行相应的task。
+    
 2. 单元测试主要测什么？
 
 单元测试主要用于保证系统功能的正确性。主要测试系统的功能是否如我们所期待的那样。
