@@ -20,4 +20,12 @@ public class ProductTest {
                 new ProductItem(3, "钢化膜", 10)));
 
     }
+
+    @Test
+    void should_return_empty_when_not_contains_product() {
+        List<Integer> productIds = Arrays.asList(111,222,333);
+        Product product = new Product();
+        List<ProductItem> products = product.getProducts(productIds);
+        assertThat(products).isEmpty();
+    }
 }
