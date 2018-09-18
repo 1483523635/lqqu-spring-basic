@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 public class ProductTest {
@@ -13,9 +14,10 @@ public class ProductTest {
         List<Integer> productIds = Arrays.asList(1, 2, 3);
         Product product = new Product();
         List<ProductItem> products = product.getProducts(productIds);
-        assertIterableEquals(Arrays.asList(
+        assertThat(products).isEqualTo(Arrays.asList(
                 new ProductItem(1, "手机", 1000D),
                 new ProductItem(2, "手机", 1002D),
-                new ProductItem(3, "钢化膜", 10)), products);
+                new ProductItem(3, "钢化膜", 10)));
+
     }
 }
