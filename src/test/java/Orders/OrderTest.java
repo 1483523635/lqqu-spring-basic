@@ -34,4 +34,16 @@ public class OrderTest {
         OrderDetail orderDetail = order.getOrderDetail(123, Arrays.asList(1, 2, 3, 4, 5));
         assertThat(orderDetail.getOrderDetailItems()).isEmpty();
     }
+
+
+    @Test
+    void should_return_empty_when_product_ids_not_contains() {
+        OrderDetail orderDetail = order.getOrderDetail(1, Arrays.asList(1123, 2123, 3434, 4543, 5233));
+        assertThat(orderDetail.getOrderDetailItems()).isEmpty();
+    }
+    @Test
+    void should_return_empty_when_given_products_ids_and_user_id_both_not_contains() {
+        OrderDetail orderDetail = order.getOrderDetail(11234, Arrays.asList(1123, 2123, 3434, 4543, 5233));
+        assertThat(orderDetail.getOrderDetailItems()).isEmpty();
+    }
 }

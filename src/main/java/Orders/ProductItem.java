@@ -38,8 +38,12 @@ public class ProductItem {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
         ProductItem that = (ProductItem) o;
         return Double.compare(that.price, price) == 0 &&
                 id == that.id &&
